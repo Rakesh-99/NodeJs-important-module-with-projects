@@ -1,23 +1,32 @@
 const http = require('http');
+const url = require('url');
 const fs = require('fs');
-const path = require('path');
-const { geteuid } = require('process');
-const url = ('url');
 
 
-http.createServer((request, response) => {
-    // homepage
-    // about
-    //services
-    //contact
-    const getUrl = request.url;
+const createServer = http.createServer((req, resp) => {
+    const getUrl = req.url;
+
     if (getUrl == '/') {
-        console.log('Home Page');
+
+        const readFile = fs.readFileSync('./Components/Project/home.html');
+        resp.write(readFile);
+        console.log('Home Page !');
+        resp.end();
+
     } else if (getUrl == '/about') {
-        console.log('About Page');
-    } else if (getUrl == '/services') {
-        console.log('Services Page');
+        const readFile = fs.readFileSync('./Components/Project/about.html');
+        resp.write(readFile);
+        console.log('About Page !');
+
     } else if (getUrl == '/contact') {
-        console.log('Contact Page ');
+        const readFile = fs.readFileSync("./Components/Project/contact.html");
+        resp.write(readFile);
+        console.log("Contact Page !");
+
+    } else if (getUrl == '/services') {
+        const readFile = fs.readFileSync("./Components/Project/services.html");
+        resp.write(readFile);
+        console.log("Services Page !");
     }
-}).listen(4040);
+});
+createServer.listen(2020);

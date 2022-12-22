@@ -1,5 +1,3 @@
-
-
 // With the help of fs(file System) module we can do operations like :
 
 /*
@@ -9,11 +7,9 @@
         4. delete file operation
 */
 
-
 // 1. readFile operation :
 
-
-const fs = require('fs');
+const fs = require("fs");
 
 /*
 fs.readFile('./abc.txt', (err, data) => {
@@ -24,8 +20,6 @@ fs.readFile('./abc.txt', (err, data) => {
     };
 });
 */
-
-
 
 // 2. writeFile operation :
 
@@ -40,9 +34,6 @@ fs.writeFile('demo.js', content, (err) => {
 });
 */
 
-
-
-
 // 3. appendFile operation :
 
 /*
@@ -54,8 +45,6 @@ fs.appendFile('./demo.js', ' Rakesh Kumar Parida ', (err) => {
     }
 });
 */
-
-
 
 // 4. deletFile opearation:
 
